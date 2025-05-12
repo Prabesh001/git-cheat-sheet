@@ -86,11 +86,36 @@ git reset HEAD~1                # Undo last commit (keep changes unstaged)
 
 ---
 
-## 🗑️ Remove Git from a Project
+## 🗑️ **Removing Git from a Project**
 
+### **Method 1: Using Terminal (Unix-based systems or Git Bash)**
+
+```bash
+rm -rf .git                     # Remove all Git tracking and history (for Unix systems or Git Bash)
 ```
-rm -rf .git                     # Remove all Git tracking and history
+
+### **Method 2: Forceful Measures for Windows PowerShell**
+
+```powershell
+Remove-Item -Recurse -Force .git   # Force delete .git folder in PowerShell (Windows)
 ```
+
+- **Explanation**:
+    - `-Recurse`: Deletes all contents inside `.git`
+    - `-Force`: Forces deletion of hidden and read-only files
+
+### **Troubleshooting Steps if the above doesn't work:**
+
+1. **Make sure you're inside the correct project directory**:
+    ```bash
+    ls -a
+    ```
+    Look for the `.git` folder.
+
+2. **On Windows**: If you're using PowerShell, make sure no other processes (e.g., Git GUI, VS Code) are using `.git`. You can try closing any Git-based GUI or IDE before running the command.
+
+3. **Manually Delete the `.git` Folder**:  
+    If the terminal command isn't working, go to your **File Explorer** and enable "Show Hidden Files." Delete the `.git` folder manually.
 
 ---
 
