@@ -103,6 +103,7 @@ Remove-Item -Recurse -Force .git   # Force delete .git folder in PowerShell (Win
 - **Explanation**:
     - `-Recurse`: Deletes all contents inside `.git`
     - `-Force`: Forces deletion of hidden and read-only files
+ 
 
 ### **Troubleshooting Steps if the above doesn't work:**
 
@@ -117,6 +118,17 @@ Remove-Item -Recurse -Force .git   # Force delete .git folder in PowerShell (Win
 3. **Manually Delete the `.git` Folder**:  
     If the terminal command isn't working, go to your **File Explorer** and enable "Show Hidden Files." Delete the `.git` folder manually.
 
+---
+### ** Remove the Files from Git Tracking**
+
+```bash
+git rm -r --cached node_modules
+git rm --cached .env
+
+git commit -m "Remove node_modules and .env from tracking"
+git push origin main  # or your branch name
+
+```
 ---
 
 ## 📌 Miscellaneous
